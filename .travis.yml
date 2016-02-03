@@ -6,6 +6,16 @@ compiler:
 env:
 - QT_BASE=55
 
+deploy:
+  provider: releases
+  api-key:
+    secure: MSqwxmPjORXIIWYulgT60oNGvI6rzu3VfXNv6yoZyPBGmSwaFP7xW5zJe85UCkQ3fJwwuUsln9kRw5+0VIFREHHaY/FwFMFkDE/z5CVdwq7ibKIJHSEDXeMzuBXcVzpgIgrqrbfxcIotA/xQOFVcDWutHE6/THsUfexT7sGWBnnwNCLazmrpSka7HGWlH/59SG2gLgxIdTVv1Ptsf/4sDlU/r8ACzZxHzsfSyHANJfi2gIqZp8E/dj17UfO7hZR2ZHQOt80Iq7T3zs+QXNNAt+ocVDF805tctKy4lSKKwKwZgMQFrH4DFQVp6busJr28gBqSoxhqy0wBnWyf3+dSNIdg+Z6CY7H/A89AXUdpIi5TB7WfaG0oQWOxYSMVke3r7otHhLyLFLftZaLnfiS1Xt3L+hImHPvp69bEm3TXAg83ElCKLMbVbmJq6Phqaqo6HTNDu0tk7D94fG0W7grT0BojWhzM3tR/vk9ePx0L6oOPOPL6QJsnIMP2IHF5oXQcXSo6hb0ZGwMoik9NBerxyleNHgYrT2dgXLsMOAal4s+IMHAWAgaB8AOlWlfstk6JasXxh+7FYpRq0bo8eaeu+TDc7uKVNI7J8xMuz0idz4IZBY/iJkr+lZMc1sTakwJeKW4D4VrgJAn4RmpHrgjjXZyVRPtXRDv7UKHWZJ5Fg34=
+  file:
+    - pizza-oven-qt-serial
+  skip_cleanup: true
+  on:
+    tags: true
+
 before_install:
 - if [ "$CXX" = "g++" ]; then sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y; fi
 - if [ "$QT_BASE" = "48" ]; then sudo add-apt-repository ppa:beineri/opt-qt487 -y; fi

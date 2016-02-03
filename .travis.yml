@@ -4,7 +4,6 @@ compiler:
 - gcc
 
 env:
-- QT_BASE=48
 - QT_BASE=55
 
 before_install:
@@ -27,6 +26,7 @@ install:
 - if [ "$QT_BASE" = "53" ]; then sudo apt-get install -qq qt53base; source /opt/qt53/bin/qt53-env.sh; fi
 - if [ "$QT_BASE" = "54" ]; then sudo apt-get install -qq qt54base; source /opt/qt54/bin/qt54-env.sh; fi
 - if [ "$QT_BASE" = "55" ]; then sudo apt-get install -qq qt55base; source /opt/qt55/bin/qt55-env.sh; fi
+- sudo apt-get install -qq libudev-dev
 - git clone git://code.qt.io/qt/qtserialport.git /tmp/qtserialport
 - mkdir /tmp/qtserialport-build
 - cd /tmp/qtserialport-build

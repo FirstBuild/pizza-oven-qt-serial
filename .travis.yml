@@ -39,4 +39,4 @@ install:
 
 script: 
 - qmake -r
-- make check
+- make CC=$CC CXX=$CXX LINK=$CXX check
